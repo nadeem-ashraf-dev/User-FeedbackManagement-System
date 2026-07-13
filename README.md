@@ -1,44 +1,188 @@
-# Feedback Analysis Workflow
+# 💬 Automating User Feedback
 
-This project automates the processing of customer feedback emails from Gmail. It extracts the email content, analyzes sentiment using OpenAI's GPT model, stores the results in a SQLite database, and sends real‑time alerts (Slack/email) when negative feedback is detected.
+> A production-ready workflow automation project built with **n8n** that automates user feedback collection, processing, and notifications.
 
-The workflow follows the exact process shown in the provided diagram:
-
-1. **Trigger** – listens for new emails under a specified Gmail label.
-2. **Extract Feedback Data** – retrieves sender, subject, and body from each unread email.
-3. **Analyze Sentiment** – sends the text to OpenAI with a structured prompt.
-4. **Check Sentiment** – classifies as positive, neutral, or negative with a score.
-5. **Store in Feedback Database** – logs every feedback entry with sentiment and timestamp.
-6. **Alert Team on Negative Feedback** – sends notifications via Slack, email, or both.
-7. **Execute workflow** – runs continuously in a polling loop.
+![n8n](https://img.shields.io/badge/n8n-Workflow%20Automation-ff6d5a?style=for-the-badge&logo=n8n)
+![Automation](https://img.shields.io/badge/Automation-Enabled-success?style=for-the-badge)
+![REST API](https://img.shields.io/badge/API-REST-blue?style=for-the-badge)
+![Webhook](https://img.shields.io/badge/Webhook-Active-orange?style=for-the-badge)
 
 ---
 
-## Features
+## 📖 Overview
 
-- ✅ **Gmail integration** – uses Gmail API to monitor a specific label.
-- ✅ **AI‑powered sentiment** – leverages OpenAI's GPT (e.g., `gpt-3.5-turbo`) for accurate classification and score.
-- ✅ **Persistent storage** – SQLite database stores all feedback for historical analysis.
-- ✅ **Real‑time alerts** – notifies your team instantly when negative feedback arrives.
-- ✅ **Modular design** – easy to extend or replace components (e.g., use another LLM, add more alert channels).
+**Automating User Feedback** is an intelligent workflow built using **n8n** that simplifies the process of collecting, processing, and managing customer feedback.
+
+Instead of manually reviewing submissions, the workflow automatically receives feedback, validates the data, sends notifications, and stores information for future analysis.
 
 ---
 
-## Prerequisites
+# 🚀 Features
 
-- Python 3.8+
-- A Google Cloud project with Gmail API enabled
-- OAuth 2.0 credentials (`credentials.json`) for Gmail
-- An OpenAI API key
-- (Optional) Slack webhook URL and/or SMTP credentials for email alerts
+- ✅ Automated Feedback Collection
+- ✅ Webhook Trigger
+- ✅ Form Submission Processing
+- ✅ Data Validation
+- ✅ Email Notifications
+- ✅ API Integration
+- ✅ JSON Data Processing
+- ✅ Error Handling
+- ✅ Scalable Workflow
+- ✅ Business Process Automation
+- ✅ Low-Code Automation
 
 ---
 
-## Installation
+# ⚙ Workflow
 
-Clone the repository and install dependencies:
+```text
+User
+ │
+ ▼
+Feedback Form
+ │
+ ▼
+Webhook
+ │
+ ▼
+Validate Data
+ │
+ ▼
+Process Feedback
+ │
+ ├────────────► Email Notification
+ │
+ ▼
+Store Feedback
+ │
+ ▼
+Workflow Complete
+```
 
-```bash
-git clone https://github.com/yourusername/feedback-workflow.git
-cd feedback-workflow
-pip install -r requirements.txt
+---
+
+# 🛠 Tech Stack
+
+- n8n
+- REST API
+- Webhooks
+- Gmail
+- JavaScript
+- JSON
+- HTTP Request
+- Workflow Automation
+
+---
+
+# 📂 Project Structure
+
+```
+Automating User Feedback/
+│
+├── workflow.json
+├── README.md
+├── assets/
+│   ├── workflow.png
+│   └── architecture.png
+│
+└── docs/
+    └── setup-guide.md
+```
+
+---
+
+# 📋 Workflow Nodes
+
+- Webhook
+- Set
+- Edit Fields
+- IF
+- HTTP Request
+- Function
+- Gmail
+- Respond to Webhook
+
+---
+
+# 🔄 Workflow Process
+
+1. User submits feedback
+2. Webhook receives the request
+3. Feedback is validated
+4. Data is processed
+5. Notification email is generated
+6. Feedback is stored
+7. Workflow completes successfully
+
+---
+
+# 🌟 Business Benefits
+
+- Reduce manual work
+- Faster response times
+- Centralized feedback management
+- Improved customer experience
+- Easy integration with existing systems
+- Scalable automation
+- Better operational efficiency
+
+---
+
+# 🔮 Future Improvements
+
+- AI Sentiment Analysis
+- OpenAI Integration
+- Automatic Feedback Categorization
+- CRM Integration
+- Slack Notifications
+- Microsoft Teams Notifications
+- Dashboard Analytics
+- Airtable Integration
+- Google Sheets Integration
+- Customer Satisfaction Reports
+
+---
+
+# 📚 Learning Outcomes
+
+This project demonstrates experience with:
+
+- Workflow Automation
+- API Integration
+- Webhook Automation
+- Business Process Automation
+- Email Automation
+- Data Validation
+- JSON Processing
+- Production Workflow Design
+- Low-Code Development
+
+---
+
+# 👨‍💻 Author
+
+**Nadeem Ashraf**
+
+**AI Automation Engineer | n8n Developer | MERN Stack Developer**
+
+📧 Email: nadeem.ashraf.dev@gmail.com
+
+🔗 LinkedIn:
+https://www.linkedin.com/in/nadeem-ashraf
+
+💻 GitHub:
+https://github.com/nadeem-ashraf-dev
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, please consider giving it a **Star ⭐** on GitHub.
+
+Your support motivates me to continue building real-world AI automation projects.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
